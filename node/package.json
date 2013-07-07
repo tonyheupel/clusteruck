@@ -1,0 +1,8 @@
+{
+  "name": "Feedify",
+  "author": "Tony C. Heupel",
+  "dependencies": {
+    "restify": "2.6.x",
+    "cluster-master": "0.1.x"
+  }
+}
