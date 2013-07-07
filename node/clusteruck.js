@@ -52,7 +52,7 @@ function removeWorkers(numToRemove) {
 
   while (numRemoved < numToRemove) {
     var lastId = workerIds[workerIds.length - (numRemoved + 1)];
-          
+
     console.log('Killing worker id ' + lastId + '...');
     cluster.workers[lastId].kill();
     delete cluster.workers[lastId];
@@ -63,7 +63,7 @@ function removeWorkers(numToRemove) {
 
 if (cluster.isMaster) {
   // Set initial worker size
-  forkWorkers(numCPUs);  
+  forkWorkers(numCPUs);
 
   cluster.on('exit', function(worker, code, signal) {
     console.log('worker ' + worker.process.pid + ' died');
