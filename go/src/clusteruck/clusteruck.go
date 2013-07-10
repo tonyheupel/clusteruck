@@ -9,14 +9,17 @@ import (
 	"strconv"
 )
 
+
 func SlowHandler(w http.ResponseWriter, req *http.Request) {
 	time.Sleep(250 * time.Millisecond);
 	io.WriteString(w, "hello, world!\n")
 }
 
+
 func FastHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello, world!\n")
 }
+
 
 func ResizeHandler(w http.ResponseWriter, req *http.Request) {
 	procs, err := strconv.Atoi(req.FormValue("workers"))
@@ -30,6 +33,7 @@ func ResizeHandler(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(runtime.GOMAXPROCS(procs))
 	io.WriteString(w, "Resized to " + strconv.Itoa(procs) + " procs")
 }
+
 
 func main() {
 	numCPU := runtime.NumCPU();

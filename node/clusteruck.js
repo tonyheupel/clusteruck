@@ -12,10 +12,12 @@ function slowHandler(req, res) {
   }, 250);
 }
 
+
 function fastHandler(req, res) {
-    res.writeHead(200);
-    res.end('hello, world');
+  res.writeHead(200);
+  res.end('hello, world');
 }
+
 
 function resizeHandler(req, res) {
   var urlParts = url.parse(req.url, true);
@@ -25,6 +27,7 @@ function resizeHandler(req, res) {
   res.writeHead(200);
   res.end('Resized to ' + Object.keys(cluster.workers).length);
 }
+
 
 function forkWorkers(numWorkers) {
   var currentWorkers = cluster.workers ? Object.keys(cluster.workers).length : 0;
@@ -39,12 +42,14 @@ function forkWorkers(numWorkers) {
   console.log('Now at ' + Object.keys(cluster.workers).length + ' worker(s)');
 }
 
+
 function addWorkers(numToAdd) {
   for (var i = 0; i < numToAdd; i++) {
     console.log('Forking new worker #' + (i + 1) + '...')
     cluster.fork();
   }
 }
+
 
 function removeWorkers(numToRemove) {
   var workerIds = Object.keys(cluster.workers);
@@ -60,6 +65,7 @@ function removeWorkers(numToRemove) {
     numRemoved = numRemoved + 1;
   }
 }
+
 
 if (cluster.isMaster) {
   // Set initial worker size
