@@ -1,42 +1,38 @@
 package main
 
 import (
-	"net/http"
-	"io"
-	"runtime"
 	"fmt"
-	"time"
+	"net/http"
+	"runtime"
 	"strconv"
+	"time"
 )
 
-
 func SlowHandler(w http.ResponseWriter, req *http.Request) {
-	time.Sleep(250 * time.Millisecond);
-	io.WriteString(w, "hello, world!\n")
+	time.Sleep(250 * time.Millisecond)
+	fmt.Fprint(w, "hello, world!\n")
 }
-
 
 func FastHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "hello, world!\n")
+	fmt.Fprint(w, "hello, world!\n")
 }
-
 
 func ResizeHandler(w http.ResponseWriter, req *http.Request) {
 	procs, err := strconv.Atoi(req.FormValue("workers"))
 
-	if (err != nil) {
-		io.WriteString(w, "Resize did not work.  Please use '?workers=<number>'")
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		fmt.Fprint(w, "Resize did not work.  Please use '?workers=<number>'")
 		return
 	}
 
-	fmt.Println("sizing to", procs, "procs...")
-	fmt.Println(runtime.GOMAXPROCS(procs))
-	io.WriteString(w, "Resized to " + strconv.Itoa(procs) + " procs")
+	fmt.Printf("sizing to %s procs...\n", procs)
+	fmt.Println("previous number of procs used:", runtime.GOMAXPROCS(procs))
+	fmt.Fprintf(w, "Resized to %d procs", strconv.Itoa(procs))
 }
 
-
 func main() {
-	numCPU := runtime.NumCPU();
+	numCPU := runtime.NumCPU()
 	fmt.Println("number of procs:", numCPU)
 	fmt.Println(runtime.GOMAXPROCS(numCPU))
 
