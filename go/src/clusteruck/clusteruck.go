@@ -26,9 +26,9 @@ func ResizeHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Printf("sizing to %s procs...\n", procs)
+	fmt.Printf("sizing to %d procs...\n", procs)
 	fmt.Println("previous number of procs used:", runtime.GOMAXPROCS(procs))
-	fmt.Fprintf(w, "Resized to %d procs", strconv.Itoa(procs))
+	fmt.Fprintf(w, "Resized to %d procs", procs)
 }
 
 func main() {
