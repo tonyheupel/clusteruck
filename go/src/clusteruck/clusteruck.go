@@ -8,16 +8,16 @@ import (
 	"time"
 )
 
-func SlowHandler(w http.ResponseWriter, req *http.Request) {
+func slowHandler(w http.ResponseWriter, req *http.Request) {
 	time.Sleep(250 * time.Millisecond)
 	fmt.Fprint(w, "hello, world!\n")
 }
 
-func FastHandler(w http.ResponseWriter, req *http.Request) {
+func fastHandler(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(w, "hello, world!\n")
 }
 
-func ResizeHandler(w http.ResponseWriter, req *http.Request) {
+func resizeHandler(w http.ResponseWriter, req *http.Request) {
 	procs, err := strconv.Atoi(req.FormValue("workers"))
 
 	if err != nil {
@@ -36,8 +36,8 @@ func main() {
 	fmt.Println("number of procs:", numCPU)
 	fmt.Println(runtime.GOMAXPROCS(numCPU))
 
-	http.HandleFunc("/", SlowHandler)
-	http.HandleFunc("/resize", ResizeHandler)
+	http.HandleFunc("/", slowHandler)
+	http.HandleFunc("/resize", resizeHandler)
 
 	http.ListenAndServe(":8081", nil)
 }

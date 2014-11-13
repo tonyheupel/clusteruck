@@ -79,5 +79,5 @@ if (cluster.isMaster) {
 } else {
   // Workers can share any TCP connection
   // In this case its a HTTP server
-  http.createServer(slowHandler).listen(80);
+  http.createServer(slowHandler).listen(8080);
 }
