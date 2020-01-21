@@ -75,9 +75,9 @@ if (cluster.isMaster) {
     console.log('worker ' + worker.process.pid + ' died');
   });
 
-  http.createServer(resizeHandler).listen(8081);
+  http.createServer(resizeHandler).listen(8080);
 } else {
   // Workers can share any TCP connection
   // In this case its a HTTP server
-  http.createServer(slowHandler).listen(8080);
+  http.createServer(slowHandler).listen(8081);
 }

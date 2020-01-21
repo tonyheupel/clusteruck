@@ -1,8 +1,11 @@
 {
-  "name": "Feedify",
+  "name": "clusteruck",
   "author": "Tony C. Heupel",
+  "scripts": {
+    "start": "node ./clusteruck.js"
+  },
   "dependencies": {
-    "restify": "2.6.x",
+    "restify": "8.5.x",
     "cluster-master": "0.1.x"
   }
 }
