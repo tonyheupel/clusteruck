@@ -19,8 +19,9 @@ namespace clusteruck.Controllers
         }
 
         [HttpGet]
-        public string Get()
+        public async Task<string> Get()
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(250));
             return "hello, world\n";
         }
     }
