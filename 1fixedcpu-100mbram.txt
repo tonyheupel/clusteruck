@@ -1,0 +1,198 @@
+----------------------
+# Node
+
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+9dd80bf7d468        clusteruck          9.31%               55.5MiB / 100MiB    55.50%              411kB / 427kB       0B / 4.1kB          46
+
+Image size:           124 MB
+Build time (scratch):  34 seconds
+Build time (cached):   02 seconds
+
+Issues:               Image size, startup time, resource utilization
+
+(no warmup)
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8081
+
+Document Path:          /
+Document Length:        0 bytes
+
+Concurrency Level:      10
+Time taken for tests:   13.980 seconds
+Complete requests:      1000
+Failed requests:        479
+   (Connect: 0, Receive: 0, Length: 479, Exceptions: 0)
+Total transferred:      55564 bytes
+HTML transferred:       5748 bytes
+Requests per second:    71.53 [#/sec] (mean)
+Time per request:       139.803 [ms] (mean)
+Time per request:       13.980 [ms] (mean, across all concurrent requests)
+Transfer rate:          3.88 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       1
+Processing:     1  128 131.8      2     372
+Waiting:        0  125 130.9      0     344
+Total:          1  128 131.9      2     372
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%    259
+  75%    262
+  80%    264
+  90%    269
+  95%    273
+  98%    280
+  99%    307
+ 100%    372 (longest request)
+========================
+(after warmup):
+Server Software:        Node.js/http.Server
+Server Hostname:        localhost
+Server Port:            8081
+
+Document Path:          /
+Document Length:        12 bytes
+
+Concurrency Level:      10
+Time taken for tests:   26.564 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      116000 bytes
+HTML transferred:       12000 bytes
+Requests per second:    37.64 [#/sec] (mean)
+Time per request:       265.642 [ms] (mean)
+Time per request:       26.564 [ms] (mean, across all concurrent requests)
+Transfer rate:          4.26 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       1
+Processing:   252  262  11.2    260     364
+Waiting:      252  260  10.8    258     363
+Total:        252  262  11.2    260     364
+
+Percentage of the requests served within a certain time (ms)
+  50%    260
+  66%    263
+  75%    264
+  80%    266
+  90%    270
+  95%    273
+  98%    278
+  99%    346
+ 100%    364 (longest request)
+----------------------
+
+# .NET Core
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+3b791a724bf6        clusteruck          9.03%               35.36MiB / 100MiB   35.36%              118kB / 123kB       0B / 0B             26
+
+Image size:           108 MB
+Build time (scratch):  35 seconds
+Build time (cached):   05 seconds
+
+Issues:               Image size, startup time, resource utilization
+
+(no warmup):
+Starting .NET Core test...
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+apr_pollset_poll: The timeout specified has expired (70007)
+Total of 421 requests completed
+######## WHEN LOCKED TO A SPECIFIC CPU, KESTREL DOESN'T WORK ##########
+
+======================
+(after warmup):
+######## DOESN'T WORK EITHER #######
+----------------------
+
+# Go
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+7b448be9a24d        clusteruck          3.38%               5.758MiB / 100MiB   5.76%               971kB / 1.13MB      0B / 0B             11 
+
+Image size:            7.46 MB
+Build time (scratch): 35    seconds
+Build time (cached):  01    second
+
+Server Software:        Go/net/http
+Server Hostname:        localhost
+Server Port:            8081
+
+Document Path:          /
+Document Length:        14 bytes
+
+Concurrency Level:      10
+Time taken for tests:   26.770 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      152000 bytes
+HTML transferred:       14000 bytes
+Requests per second:    37.36 [#/sec] (mean)
+Time per request:       267.698 [ms] (mean)
+Time per request:       26.770 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.54 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       2
+Processing:   253  264  20.2    262     465
+Waiting:      253  264  20.1    261     464
+Total:        253  265  20.2    263     465
+
+Percentage of the requests served within a certain time (ms)
+  50%    263
+  66%    265
+  75%    266
+  80%    267
+  90%    268
+  95%    271
+  98%    274
+  99%    453
+ 100%    465 (longest request)
+===========================
+(after warmup):
+Server Software:        Go/net/http
+Server Hostname:        localhost
+Server Port:            8081
+
+Document Path:          /
+Document Length:        14 bytes
+
+Concurrency Level:      10
+Time taken for tests:   26.647 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      152000 bytes
+HTML transferred:       14000 bytes
+Requests per second:    37.53 [#/sec] (mean)
+Time per request:       266.472 [ms] (mean)
+Time per request:       26.647 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.57 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       2
+Processing:   253  263   4.3    263     281
+Waiting:      253  263   4.0    263     277
+Total:        253  264   4.3    264     281
+
+Percentage of the requests served within a certain time (ms)
+  50%    264
+  66%    265
+  75%    266
+  80%    267
+  90%    269
+  95%    271
+  98%    274
+  99%    276
+ 100%    281 (longest request)
