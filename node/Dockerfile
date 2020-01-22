@@ -1,5 +1,7 @@
 # Our first stage, that is the Builder
 FROM node:13.6-alpine AS build
+# install Python for nod-gyp to stop throwing errors
+RUN apk update && apk add python make && rm -rf /var/cache/apk/*
 WORKDIR /app
 COPY "./*.js*" /app/
 RUN npm install

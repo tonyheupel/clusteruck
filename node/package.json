@@ -1,6 +1,9 @@
 {
   "name": "clusteruck",
   "author": "Tony C. Heupel",
+  "description": "Trying out different platform builds and clustering on one machine",
+  "repository": "https://github.com/tchype/clusteruck",
+  "license": "MIT",
   "scripts": {
     "start": "node ./clusteruck.js"
   },
