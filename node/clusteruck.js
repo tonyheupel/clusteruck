@@ -7,7 +7,7 @@ var numCPUs = require('os').cpus().length;
 
 function slowHandler(req, res) {
   setTimeout(function() {
-    res.writeHead(200);
+    res.writeHead(200, { "Server": "Node.js/http.Server" });
     res.end('hello, world');
   }, 250);
 }

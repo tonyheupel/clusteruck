@@ -10,6 +10,7 @@ import (
 
 func slowHandler(w http.ResponseWriter, req *http.Request) {
 	time.Sleep(250 * time.Millisecond)
+	w.Header().Set("Server", "Go/net/http")
 	fmt.Fprint(w, "hello, world!\n")
 }
 
