@@ -10,6 +10,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 COPY . ./clusteruck
 WORKDIR /clusteruck/
+# Look to do this soon: dotnet publish -o ./output/ --runtime osx-x64 --self-contained
 RUN dotnet build -c Release -o output
 
 # Final image 
@@ -18,4 +19,6 @@ RUN dotnet build -c Release -o output
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine AS runtime
 COPY --from=build /clusteruck/output .
 EXPOSE 8081
+# Look to do this soon: ./clusteruck
+# Does dynamic port binding work?
 ENTRYPOINT ["dotnet", "clusteruck.dll", "--urls", "http://0.0.0.0:8081"]
