@@ -1,8 +1,7 @@
 ----------------------
 # Node
-
 CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
-9dd80bf7d468        clusteruck          9.31%               55.5MiB / 100MiB    55.50%              411kB / 427kB       0B / 4.1kB          46
+9b205dde8767        clusteruck          3.48%               23.35MiB / 100MiB   23.35%              457kB / 478kB       0B / 4.1kB          18
 
 Image size:           124 MB
 Build time (scratch):  34 seconds
@@ -19,34 +18,34 @@ Document Path:          /
 Document Length:        0 bytes
 
 Concurrency Level:      10
-Time taken for tests:   13.980 seconds
+Time taken for tests:   14.978 seconds
 Complete requests:      1000
-Failed requests:        479
-   (Connect: 0, Receive: 0, Length: 479, Exceptions: 0)
-Total transferred:      55564 bytes
-HTML transferred:       5748 bytes
-Requests per second:    71.53 [#/sec] (mean)
-Time per request:       139.803 [ms] (mean)
-Time per request:       13.980 [ms] (mean, across all concurrent requests)
-Transfer rate:          3.88 [Kbytes/sec] received
+Failed requests:        510
+   (Connect: 0, Receive: 0, Length: 510, Exceptions: 0)
+Total transferred:      59160 bytes
+HTML transferred:       6120 bytes
+Requests per second:    66.76 [#/sec] (mean)
+Time per request:       149.783 [ms] (mean)
+Time per request:       14.978 [ms] (mean, across all concurrent requests)
+Transfer rate:          3.86 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       1
-Processing:     1  128 131.8      2     372
-Waiting:        0  125 130.9      0     344
-Total:          1  128 131.9      2     372
+Connect:        0    0   0.5      0       3
+Processing:     1  138 134.1    259     368
+Waiting:        0  135 132.6    257     366
+Total:          1  138 134.4    260     369
 
 Percentage of the requests served within a certain time (ms)
-  50%      2
-  66%    259
-  75%    262
-  80%    264
-  90%    269
+  50%    260
+  66%    266
+  75%    268
+  80%    269
+  90%    272
   95%    273
-  98%    280
-  99%    307
- 100%    372 (longest request)
+  98%    282
+  99%    366
+ 100%    369 (longest request)
 ========================
 (after warmup):
 Server Software:        Node.js/http.Server
@@ -57,58 +56,55 @@ Document Path:          /
 Document Length:        12 bytes
 
 Concurrency Level:      10
-Time taken for tests:   26.564 seconds
+Time taken for tests:   26.776 seconds
 Complete requests:      1000
 Failed requests:        0
 Total transferred:      116000 bytes
 HTML transferred:       12000 bytes
-Requests per second:    37.64 [#/sec] (mean)
-Time per request:       265.642 [ms] (mean)
-Time per request:       26.564 [ms] (mean, across all concurrent requests)
-Transfer rate:          4.26 [Kbytes/sec] received
+Requests per second:    37.35 [#/sec] (mean)
+Time per request:       267.761 [ms] (mean)
+Time per request:       26.776 [ms] (mean, across all concurrent requests)
+Transfer rate:          4.23 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       1
-Processing:   252  262  11.2    260     364
-Waiting:      252  260  10.8    258     363
-Total:        252  262  11.2    260     364
+Connect:        0    1   0.4      0       3
+Processing:   253  264   4.6    264     279
+Waiting:      253  261   3.7    261     275
+Total:        253  265   4.7    265     280
+ERROR: The median and mean for the initial connection time are more than twice the standard
+       deviation apart. These results are NOT reliable.
 
 Percentage of the requests served within a certain time (ms)
-  50%    260
-  66%    263
-  75%    264
-  80%    266
-  90%    270
+  50%    265
+  66%    266
+  75%    267
+  80%    268
+  90%    271
   95%    273
-  98%    278
-  99%    346
- 100%    364 (longest request)
+  98%    276
+  99%    278
+ 100%    280 (longest request)
 ----------------------
 
 # .NET Core
 CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
-3b791a724bf6        clusteruck          9.03%               35.36MiB / 100MiB   35.36%              118kB / 123kB       0B / 0B             26
+da46f85ddb49        clusteruck          7.24%               26.74MiB / 100MiB   26.74%              32.7kB / 23kB       102kB / 0B          12
 
-Image size:           108 MB
+Image size:           105 MB
 Build time (scratch):  35 seconds
 Build time (cached):   05 seconds
 
 Issues:               Image size, startup time, resource utilization
 
 (no warmup):
-Starting .NET Core test...
-This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
 Benchmarking localhost (be patient)
 Completed 100 requests
 Completed 200 requests
 Completed 300 requests
 Completed 400 requests
 apr_pollset_poll: The timeout specified has expired (70007)
-Total of 421 requests completed
+Total of 417 requests completed
 ######## WHEN LOCKED TO A SPECIFIC CPU, KESTREL DOESN'T WORK ##########
 
 ======================
@@ -118,9 +114,9 @@ Total of 421 requests completed
 
 # Go
 CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
-7b448be9a24d        clusteruck          3.38%               5.758MiB / 100MiB   5.76%               971kB / 1.13MB      0B / 0B             11 
+bfb6e964dc33        clusteruck          2.49%               5.199MiB / 100MiB   5.20%               996kB / 1.16MB      0B / 0B             6
 
-Image size:            7.46 MB
+Image size:            7.39 MB
 Build time (scratch): 35    seconds
 Build time (cached):  01    second
 
@@ -132,33 +128,33 @@ Document Path:          /
 Document Length:        14 bytes
 
 Concurrency Level:      10
-Time taken for tests:   26.770 seconds
+Time taken for tests:   26.637 seconds
 Complete requests:      1000
 Failed requests:        0
 Total transferred:      152000 bytes
 HTML transferred:       14000 bytes
-Requests per second:    37.36 [#/sec] (mean)
-Time per request:       267.698 [ms] (mean)
-Time per request:       26.770 [ms] (mean, across all concurrent requests)
-Transfer rate:          5.54 [Kbytes/sec] received
+Requests per second:    37.54 [#/sec] (mean)
+Time per request:       266.370 [ms] (mean)
+Time per request:       26.637 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.57 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0       2
-Processing:   253  264  20.2    262     465
-Waiting:      253  264  20.1    261     464
-Total:        253  265  20.2    263     465
+Connect:        0    0   0.2      0       2
+Processing:   254  263   4.5    263     283
+Waiting:      254  262   4.2    262     275
+Total:        254  264   4.5    263     284
 
 Percentage of the requests served within a certain time (ms)
   50%    263
   66%    265
-  75%    266
+  75%    267
   80%    267
-  90%    268
+  90%    270
   95%    271
   98%    274
-  99%    453
- 100%    465 (longest request)
+  99%    275
+ 100%    284 (longest request)
 ===========================
 (after warmup):
 Server Software:        Go/net/http
@@ -169,30 +165,30 @@ Document Path:          /
 Document Length:        14 bytes
 
 Concurrency Level:      10
-Time taken for tests:   26.647 seconds
+Time taken for tests:   26.522 seconds
 Complete requests:      1000
 Failed requests:        0
 Total transferred:      152000 bytes
 HTML transferred:       14000 bytes
-Requests per second:    37.53 [#/sec] (mean)
-Time per request:       266.472 [ms] (mean)
-Time per request:       26.647 [ms] (mean, across all concurrent requests)
-Transfer rate:          5.57 [Kbytes/sec] received
+Requests per second:    37.70 [#/sec] (mean)
+Time per request:       265.223 [ms] (mean)
+Time per request:       26.522 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.60 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.3      0       2
-Processing:   253  263   4.3    263     281
-Waiting:      253  263   4.0    263     277
-Total:        253  264   4.3    264     281
+Processing:   254  262   4.3    261     281
+Waiting:      253  261   4.1    261     280
+Total:        254  262   4.3    262     282
 
 Percentage of the requests served within a certain time (ms)
-  50%    264
-  66%    265
-  75%    266
-  80%    267
-  90%    269
-  95%    271
-  98%    274
-  99%    276
- 100%    281 (longest request)
+  50%    262
+  66%    264
+  75%    265
+  80%    266
+  90%    268
+  95%    270
+  98%    272
+  99%    274
+ 100%    282 (longest request)
