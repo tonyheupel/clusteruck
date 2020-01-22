@@ -1,0 +1,33 @@
+----------------------
+# Node
+
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4963a589028b        clusteruck          8.84%               61.65MiB / 1.943GiB   3.10%               393kB / 410kB       0B / 4.1kB          46
+
+Image size:           124 MB
+Build time (scratch):  34 seconds
+Build time (cached):   02 seconds
+
+Issues:               Image size, startup time, resource utilization
+----------------------
+
+# .NET Core
+
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cbcad0e560cf        clusteruck          6.62%               42.13MiB / 1.943GiB   2.12%               168kB / 180kB       0B / 0B             26
+
+Image size:           108 MB
+Build time (scratch):  35 seconds
+Build time (cached):   05 seconds
+
+Issues:               Image size, startup time, resource utilization
+----------------------
+
+# Go
+
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+92683ea2cac0        clusteruck          3.80%               4.855MiB / 1.943GiB   0.24%               349kB / 404kB       0B / 0B             10
+
+Image size:            7.46 MB
+Build time (scratch): 35    seconds
+Build time (cached):  01    second
